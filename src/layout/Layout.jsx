@@ -4,7 +4,7 @@ import NavBar from '../components/Nav';
 
 const Layout = () => {
   return (
-    <div>
+    <div class="bg-slate-200 w-full h-full box-border">
         <NavBar />
             <Outlet />
         </div>
