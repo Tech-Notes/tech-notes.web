@@ -7,13 +7,13 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   return (
-    <div class="w-full h-14 flex justify-between pr-4 box-border">
-      <div class="h-14 w-1/6 flex justify-center items-center">
+    <div class="w-full h-16 flex justify-between pr-4 md:pr-9 border-2 border-b-slate-100 ">
+      <div class="h-14 w-1/6 flex justify-center items-center md:w-1/12 border-2 border-r-slate-100">
         <FontAwesomeIcon icon={faHouse} class="w-6"/>
       </div>
-      <div class="flex gap-2 items-center">
-        <div class="w-4 mr-3">
-          <FontAwesomeIcon icon={faMoon} />
+      <div class="flex gap-1.5 items-center">
+        <div class="mr-3">
+          <FontAwesomeIcon icon={faMoon} class="w-3.5" />
         </div>
         <div class="w-7 h-7 bg-profile bg-no-repeat bg-center bg-cover bg-fit rounded-2xl"></div>
         <div>
