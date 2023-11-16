@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ThreeContentSB = ({icon, title, arrowIcon}) => {
   return (
-    <div class="flex gap-2 h-12 bg-slate-400 justify-center items-center">
+    <div class="flex gap-3 text-sm h-12 px-5 items-center hover:bg-slate-400">
         <div>
           <FontAwesomeIcon icon={icon} />
         </div>
         <div>
             {title}
         </div>
-        <div>
+        <div class="ml-5">
             <FontAwesomeIcon icon={arrowIcon} />
         </div>
       </div>

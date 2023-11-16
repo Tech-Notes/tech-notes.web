@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const TwoContentSB = ({icon, title}) => {
   return (
-    <div class="flex gap-3 h-12 bg-slate-400 justify-center items-center">
+    <div class="flex gap-3 text-sm h-12 px-5 items-center hover:bg-slate-400">
         <div>
           <FontAwesomeIcon icon={icon} />
         </div>

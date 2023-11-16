@@ -10,11 +10,14 @@ import ThreeContentSB from "./ThreeContentSB";
 
 const SideBar = () => {
   return (
-    <div class="w-1/5 h-full border-2 border-r-slate-100 md:w-1/12 flex flex-col">
-      <TwoContentSB icon={faDashboard} title={"Dashboard"}/>
-      <ThreeContentSB icon={faBox} title={"Inventory"} arrowIcon={faChevronRight} />
-      <ThreeContentSB icon={faCartShopping} title={'Sales'} arrowIcon={faChevronRight} />
-      <ThreeContentSB icon={faStar} title={'Sales'} arrowIcon={faChevronRight} />
+    <div class="w-1/4 h-full border-2 border-r-slate-100 md:w-1/12 flex flex-col">
+      <div class="border-b border-slate-300">
+        <TwoContentSB icon={faDashboard} title={"Dashboard"}/>
+        <ThreeContentSB icon={faBox} title={"Inventory"} arrowIcon={faChevronRight} />
+        <ThreeContentSB icon={faCartShopping} title={'Sales'} arrowIcon={faChevronRight} />
+        <ThreeContentSB icon={faStar} title={'Sales'} arrowIcon={faChevronRight} />
+      </div>
+      
       <TwoContentSB icon={faRocket} title={"Post Queue"} />
       <TwoContentSB icon={faUser} title={"User Managements"} />
       <div>
