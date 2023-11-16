@@ -10,8 +10,8 @@ import ThreeContentSB from "./ThreeContentSB";
 
 const SideBar = () => {
   return (
-    <div class="w-1/4 h-full px-1 border-r border-slate-200 bg-slate-400 md:w-1/6 flex flex-col">
-      <div class="border-b border-slate-300">
+    <div class="w-1/4 h-full px-1 border-r border-gray bg-slate-400 md:w-1/6 flex flex-col">
+      <div class="border-b border-gray">
         <TwoContentSB icon={faDashboard} title={"Dashboard"} indexPage={"Dashboard"}/>
         <ThreeContentSB icon={faBox} title={"Inventory"} indexPage={"InventOne"}/>
         <ThreeContentSB icon={faCartShopping} title={'Sales'} indexPage={"SaleOne"}/>

@@ -11,6 +11,7 @@ export default {
       },
       colors:{
         "gold":"#FFFF00",
+        "gray":"#e4e4e4"
       },
     },
   },
