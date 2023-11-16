@@ -3,12 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router';
 
 
 const NavBar = () => {
+  const navigate=useNavigate();
+
+  const onClickHandler=()=>{
+    navigate("/home")
+  }
+
   return (
-    <div class="h-full flex justify-between pr-4 md:pr-9 border-2 border-b-slate-100">
-      <div class="h-14 w-1/4 flex justify-center items-center md:w-1/12">
+    <div class="h-full flex justify-between pr-4 md:pr-9 border-2 border-b-slate-100 cursor-pointer">
+      <div onClick={onClickHandler} class="h-14 w-1/4 flex justify-center items-center md:w-1/12">
         <FontAwesomeIcon icon={faHouse} class="w-6"/>
       </div>
       <div class="flex gap-1.5 items-center">
