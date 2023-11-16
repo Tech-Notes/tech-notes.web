@@ -10,18 +10,17 @@ import ThreeContentSB from "./ThreeContentSB";
 
 const SideBar = () => {
   return (
-    <div class="w-1/4 h-full border-2 border-r-slate-100 md:w-1/6 flex flex-col">
+    <div class="w-1/4 h-full px-1 border-r border-slate-200 bg-slate-400 md:w-1/6 flex flex-col">
       <div class="border-b border-slate-300">
-        <TwoContentSB icon={faDashboard} title={"Dashboard"}/>
-        <ThreeContentSB icon={faBox} title={"Inventory"} arrowIcon={faChevronRight} />
-        <ThreeContentSB icon={faCartShopping} title={'Sales'} arrowIcon={faChevronRight} />
-        <ThreeContentSB icon={faStar} title={'Sales'} arrowIcon={faChevronRight} />
+        <TwoContentSB icon={faDashboard} title={"Dashboard"} indexPage={"Dashboard"}/>
+        <ThreeContentSB icon={faBox} title={"Inventory"} indexPage={"InventOne"}/>
+        <ThreeContentSB icon={faCartShopping} title={'Sales'} indexPage={"SaleOne"}/>
+        <ThreeContentSB icon={faStar} title={'Loyalty System'} indexPage={"LoyaltyOne"} />
       </div>
       
-      <TwoContentSB icon={faRocket} title={"Post Queue"} />
-      <TwoContentSB icon={faUser} title={"User Managements"} />
       <div>
-
+        <TwoContentSB icon={faRocket} title={"Post Queue"} indexPage={"PostQueue"} />
+        <TwoContentSB icon={faUser} title={"User Managements"} indexPage={"UserManagement"} />
       </div>
     </div>
   );

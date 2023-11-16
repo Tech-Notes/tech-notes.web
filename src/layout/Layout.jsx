@@ -5,7 +5,7 @@ import SideBar from '../components/SideBar';
 
 const Layout = () => {
   return (
-    <div class="bg-slate-200 w-screen h-screen box-border flex flex-col p-0 m-0">
+    <div class="bg-slate-300 w-screen h-screen box-border flex flex-col p-0 m-0">
       <div class="h-16">
         <NavBar />
       </div>

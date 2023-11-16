@@ -14,7 +14,7 @@ const NavBar = () => {
   }
 
   return (
-    <div class="h-full flex justify-between pr-4 md:pr-9 border-2 border-b-slate-100 cursor-pointer">
+    <div class="h-full flex justify-between pr-4 md:pr-9 border-b border-slate-200 cursor-pointer bg-slate-400">
       <div onClick={onClickHandler} class=" h-14 w-1/4 flex justify-center items-center md:w-40">
         <FontAwesomeIcon icon={faHouse} class="w-6"/>
       </div>
