@@ -1,11 +1,11 @@
 import React from 'react';
 
-const InventOne = () => {
+const LoyaltySystem = () => {
   return (
     <div class="p-10 w-full h-full">
-      I am Inventory One
+      Loyalty System
     </div>
   );
 }
 
-export default InventOne;
+export default LoyaltySystem;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
+import BoxFile from '../elementTags/BoxFile';
 
 const NewFile = ({newFile}) => {
     const navigate=useNavigate()
@@ -9,8 +10,8 @@ const NewFile = ({newFile}) => {
     }
 
   return (
-    
-        <div onClick={onClickHandler} class="flex gap-2 ml-4 text-sm h-10 px-5 items-center hover:bg-slate-500 active:bg-slate-600 cursor-pointer">
+    <div onClick={onClickHandler}>
+      <BoxFile level="2">
           <div class="text-xs text-gold font-semibold">
             JS
           </div>
@@ -18,7 +19,11 @@ const NewFile = ({newFile}) => {
               {newFile}
           </div>
           
-        </div>
+      </BoxFile>
+
+    </div>
+    
+        
       
     
   );

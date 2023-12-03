@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router';
+import Icon from '../elementTags/Icon';
+import BoxFile from '../elementTags/BoxFile';
 
 const TwoContentSB = ({icon, title, indexPage}) => {
   const navigate=useNavigate();
@@ -10,14 +12,18 @@ const TwoContentSB = ({icon, title, indexPage}) => {
 
   }
   return (
-    <div onClick={onClickHandler} class="flex gap-3 text-sm h-12 px-5 items-center hover:bg-slate-500 active:bg-slate-600 cursor-pointer">
-        <div>
+    <div onClick={onClickHandler}>
+      <BoxFile level="1">
+        <Icon>
           <FontAwesomeIcon icon={icon} />
-        </div>
+        </Icon>
         <div>
             {title}
         </div>
-      </div>
+      </BoxFile>
+
+    </div>
+    
   );
 }
 

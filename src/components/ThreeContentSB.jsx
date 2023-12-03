@@ -2,24 +2,25 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NewFile from './NewFile';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../elementTags/Icon';
+import BoxFile from '../elementTags/BoxFile';
 
 
 const ThreeContentSB = ({icon, title, indexPage}) => {
   
   return (
     <div class="flex flex-col">
-
-      <div class="flex gap-3 text-sm h-12 px-5 items-center hover:bg-slate-500 active:bg-slate-600 cursor-pointer">
-          <div>
+      <BoxFile level="1">
+          <Icon>
             <FontAwesomeIcon icon={icon} />
-          </div>
+          </Icon>
           <div>
               {title}
           </div>
-          <div class="ml-5">
+          <Icon>
               <FontAwesomeIcon icon={faAngleDown}/>
-        </div>
-      </div>
+          </Icon>
+      </BoxFile>
 
       <NewFile newFile={indexPage}/>
     

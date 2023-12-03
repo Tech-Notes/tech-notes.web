@@ -1,11 +1,11 @@
 import React from 'react';
 
-const SaleOne = () => {
+const Products = () => {
   return (
     <div class="p-10 w-full h-full">
-      I am SaleOne
+      Products
     </div>
   );
 }
 
-export default SaleOne;
+export default Products;

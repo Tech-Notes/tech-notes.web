@@ -7,10 +7,11 @@ import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import TwoContentSB from "./TwoContentSB";
 import ThreeContentSB from "./ThreeContentSB";
+import SideContainer from "../elementTags/SideContainer";
 
 const SideBar = () => {
   return (
-    <div class="w-1/4 h-full px-1 border-r border-gray bg-slate-400 md:w-1/6 flex flex-col">
+    <SideContainer>
       <div class="border-b border-gray">
         <TwoContentSB icon={faDashboard} title={"Dashboard"} indexPage={"Dashboard"}/>
         <ThreeContentSB icon={faBox} title={"Inventory"} indexPage={"InventOne"}/>
@@ -22,7 +23,7 @@ const SideBar = () => {
         <TwoContentSB icon={faRocket} title={"Post Queue"} indexPage={"PostQueue"} />
         <TwoContentSB icon={faUser} title={"User Managements"} indexPage={"UserManagement"} />
       </div>
-    </div>
+    </SideContainer>
   );
 }
 

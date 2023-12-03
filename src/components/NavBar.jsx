@@ -1,38 +1,49 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { faMoon } from '@fortawesome/free-regular-svg-icons';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router';
-
+import { useColorScheme } from '../utils/ColorSchemeProvider';
+import Icon from '../elementTags/Icon';
+import NavContainer from '../elementTags/NavContainer';
+import InnerDiv from '../elementTags/InnerDiv';
+import ThumbNail from '../elementTags/thumbNail';
 
 const NavBar = () => {
-  const navigate=useNavigate();
 
-  const onClickHandler=()=>{
-    navigate("/home")
+  const {isDark, setTheme}=useColorScheme();
+
+  const iconClickHandler=()=>{
+    setTheme(isDark ? "light" : "dark");
   }
 
   return (
-    <div class="h-full flex justify-between pr-4 md:pr-9 border-b border-gray cursor-pointer bg-slate-400">
-      <div onClick={onClickHandler} class=" h-14 w-1/4 flex justify-center items-center md:w-40">
+    <NavContainer>
+      <InnerDiv level="1">
         <FontAwesomeIcon icon={faHouse} class="w-6"/>
-      </div>
-      <div class="flex gap-1.5 items-center">
-        <div class="mr-3">
-          <FontAwesomeIcon icon={faMoon} class="w-3.5" />
+      </InnerDiv>
+      <InnerDiv level= "2">
+
+        <div onClick={iconClickHandler}>
+          <Icon level="2">
+            {isDark ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
+          </Icon>
         </div>
-        <div class="w-7 h-7 bg-profile bg-no-repeat bg-center bg-cover bg-fit rounded-2xl"></div>
+        
+        <ThumbNail image="profile"></ThumbNail>
+        
         <div>
-          Thazin Naing
+         {"Thazin Naing"}
         </div>
-        <div>
+
+        <Icon>
           <FontAwesomeIcon icon={faAngleDown} />
-        </div>
+        </Icon>
 
-      </div>
+      </InnerDiv>
 
-    </div>
+    </NavContainer>
   );
 }
 
