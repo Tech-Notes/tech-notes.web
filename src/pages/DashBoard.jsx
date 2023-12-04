@@ -1,10 +1,11 @@
 import React from 'react';
+import { Div } from '../base';
 
 const DashBoard = () => {
   return (
-    <div class="p-10 w-full h-full">
+    <Div level="2" className="p-10 w-full h-full">
       Dashboard
-    </div>
+    </Div>
   );
 }
 

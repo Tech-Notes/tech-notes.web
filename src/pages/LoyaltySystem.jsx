@@ -1,12 +1,12 @@
 import React from 'react';
 import { Div } from '../base';
 
-const UserManagement = () => {
+const LoyaltySystem = () => {
   return (
     <Div level="2" className="p-10 w-full h-full">
-      User Management
+      Loyalty System
     </Div>
   );
 }
 
-export default UserManagement;
+export default LoyaltySystem;
