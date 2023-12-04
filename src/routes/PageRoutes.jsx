@@ -1,14 +1,12 @@
-
 import { Route, Routes } from 'react-router';
 import { DashBoard,Customers,LoyaltySystem,PostQueue,Products,UserManagement } from '../pages';
 import { Layout } from '../layout';
 
 const PageRoutes = () => {
-  return (
-    
+  return ( 
     <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route path="/dashboard" element={<DashBoard />} />
+            <Route index element={<DashBoard />} />
             <Route path="/inventory/products" element={< Products/>} />
             <Route path="/sales/customers" element={<Customers/>} />
             <Route path="/loyalty/system" element={<LoyaltySystem/>} />
@@ -16,8 +14,6 @@ const PageRoutes = () => {
             <Route path="/usermanagement" element={<UserManagement/>} />
           </Route>
         </Routes>
-    
-    
   );
 }
 

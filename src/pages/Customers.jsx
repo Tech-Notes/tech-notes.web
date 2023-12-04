@@ -1,9 +1,10 @@
+import { Div } from "../base";
 
 const Customers = () => {
   return (
-    <div class="p-10 w-full h-full">
+    <Div mode="2" className="p-10 w-full h-full">
       Customer Page
-    </div>
+    </Div>
   );
 }
 

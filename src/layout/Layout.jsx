@@ -1,17 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
+import { NavigationBar } from '../components/navigation';
+import { SideBar } from '../components/side_bar';
+
 
 const Layout = () => {
   return (
-    <div class="bg-slate-300 w-screen h-screen box-border flex flex-col p-0 m-0">
-      <div class="h-16">
-        <NavBar />
-      </div>
-      <div class="h-full flex">
+    <div className="w-screen h-screen box-border flex flex-col p-0 m-0">
+      <NavigationBar />
+      <div className="flex h-full">
         <SideBar/>
-        <Outlet />
+        <Outlet/>
       </div>
         
         

@@ -4,7 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkmode: "class",
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage:{
@@ -13,12 +13,12 @@ export default {
       colors:{
         "gold" : "#FFFF00",
         "black" : "#000000",
-        "grey-100" : "#e4e4e4",
-        "grey-200" : "#616161",
-        "grey-300" : "#8A8A8A",
-        "pink-100" : "#F8AC9C",
-        "pink-200" : "#F4988D",
-        "pink-300" : "#EE8081"
+        "dark-100" : "#F3F4F6",
+        "dark-200" : "#CBC6C6",
+        "dark-300" : "#9CA3AF",
+        "light-100" : "#FFDDDC",
+        "light-200" : "#FFCCCB",
+        "light-300" : "#FEBDBB"
 
       },
     },

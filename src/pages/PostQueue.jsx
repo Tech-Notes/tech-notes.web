@@ -1,10 +1,11 @@
 import React from 'react';
+import { Div } from '../base';
 
 const PostQueue = () => {
   return (
-    <div class="p-10 w-full h-full">
+    <Div mode="2" className="p-10 w-full h-full">
       Post Queue
-    </div>
+    </Div>
   );
 }
 
