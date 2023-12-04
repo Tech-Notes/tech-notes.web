@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Div = ({children, mode, className}) => {
+const Div = ({children, level, className}) => {
   return (
-    <div className= {`bg-light-blue dark:bg-black text-black dark:text-white ${className} ${mode === "2" && "bg-light-blue dark:bg-gray-700"}`}>
+    <div className= {`bg-light dark:bg-black text-black dark:text-white ${className} ${level === "2" && "bg-white dark:bg-gray-700"}`}>
       {children}
     </div>
   );
