@@ -7,6 +7,7 @@ const PageRoutes = () => {
     <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<DashBoard />} />
+            <Route index path="/dashboard" element={<DashBoard />} />
             <Route path="/inventory/products" element={< Products/>} />
             <Route path="/sales/customers" element={<Customers/>} />
             <Route path="/loyalty/system" element={<LoyaltySystem/>} />

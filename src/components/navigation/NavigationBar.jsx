@@ -27,7 +27,7 @@ const NavigationBar = () => {
   }
 
   return (
-    <Div className="flex items-center justify-between pr-4 border-b border-grey-100 h-16 cursor-pointer">
+    <Div className="flex items-center justify-between pr-4 border-b border-gray-300 dark:border-gray-600 h-16 cursor-pointer">
       <div className="flex items-center w-1/4 justify-center" onClick={onClickHandler}>
         <FontAwesomeIcon icon={faHouse} className="w-6 h-6"/>
       </div>

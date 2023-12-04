@@ -14,7 +14,7 @@ const sideMenuList = [
 
 const SideBar = () => {
   return (
-    <Div className="h-full p-2 border-r border-grey-100 cursor-pointer">
+    <Div className="h-full p-2 border-r border-gray-300 dark:border-gray-600 cursor-pointer">
       {sideMenuList?.map((menu)=>{
         return <SideMenu key={menu.key} menu={menu}/>
       })}   
