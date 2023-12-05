@@ -9,7 +9,7 @@ export default {
     extend: {
       colors:{
         "light": "#FFFBF5",
-        "light-pink": "#F9EBDF",
+        "light-pink": "#F2BBD0",
       },
     },
   },

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Text = ({children}) => {
+const Text = ({children, className}) => {
   return (
-    <div className='text-black dark:text-white'>
+    <p className={` text-black dark:text-white ${className}`}>
       {children}
-    </div>
+    </p>
   );
 }
 
