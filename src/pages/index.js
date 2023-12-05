@@ -4,5 +4,6 @@ import LoyaltySystem from "./LoyaltySystem";
 import Products from "./Products";
 import PostQueue from "./PostQueue";
 import UserManagement from "./UserManagement";
+import Signin from "./Signin";
 
-export {DashBoard, Customers,LoyaltySystem,PostQueue,Products,UserManagement};
+export {DashBoard, Customers,LoyaltySystem,PostQueue,Products,UserManagement,Signin};

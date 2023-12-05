@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faMoon, faSun, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { useColorScheme } from '../../utils/ColorSchemeProvider';
-import { Div, Text } from '../../base';
+import { Button, Div, Text } from '../../base';
 import {useNavigate} from "react-router";
+import { useUserContext } from '../../utils/UserProvider';
 
-const profile={title: "Thazin Naing", image: "bg-profile"}
+const profile={title: "Thazin Naing", image: "bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww')]"}
 
 const NavigationBar = () => {
   const navigate=useNavigate();
+
+  const {user} = useUserContext();
 
   const [showArrow, setShowArrow]= useState(false);
 
@@ -35,16 +38,21 @@ const NavigationBar = () => {
         <div className="w-3.5 mr-3" onClick={iconClickHandler}>
           {isDark ? <FontAwesomeIcon icon={faMoon}/> : <FontAwesomeIcon icon={faSun} />}
         </div>
-        
-        <Div className={`w-7 h-7 bg-no-repeat bg-center bg-cover bg-fit rounded-2xl ${profile.image}`}></Div>
-        
-        <Text>
-         {profile.title}
-        </Text>
 
-        <div onClick={arrowClickHandler}>
-          {!showArrow ? <FontAwesomeIcon icon={faAngleDown} /> : <FontAwesomeIcon icon={faAngleUp} />}
-        </div>
+        {user ? <>
+            <Div className={`w-7 h-7 bg-no-repeat bg-center bg-cover bg-fit rounded-2xl ${profile.image}`}></Div>
+            <Text>{profile.title}</Text>
+
+            <div onClick={arrowClickHandler}>
+            {!showArrow ? <FontAwesomeIcon icon={faAngleDown} /> : <FontAwesomeIcon icon={faAngleUp} />}
+            </div>
+            </>
+          :
+          <div onClick={()=>navigate("/signin")}> 
+            <Button className="px-3 py-2">Sign in</Button>
+          </div>
+        }
+        
       </Div>
     </Div>
   );
