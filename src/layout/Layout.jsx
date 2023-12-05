@@ -13,11 +13,7 @@ const Layout = () => {
         <SideBar/>
         <Outlet/>
       </Div>
-        
-        
-
     </Div>
-    
   );
 }
 

@@ -1,11 +1,13 @@
 import React from 'react';
-import { ColorSchemeProvider } from './utils';
+import { ColorSchemeProvider , UserProvider} from './utils';
 import { PageRoutes } from './routes';
 
 const App = () => {
   return (
     <ColorSchemeProvider>
-      <PageRoutes/>
+      <UserProvider>
+        <PageRoutes/>
+      </UserProvider>
     </ColorSchemeProvider> 
   );
 }
