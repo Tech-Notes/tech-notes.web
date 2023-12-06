@@ -1,11 +1,9 @@
 import { useForm } from "react-hook-form";
-import { Text} from "../base";
+import { Link} from "../base";
 import {useNavigate} from "react-router";
-import { useUserContext } from "../utils/UserProvider";
 
 const Signin = () => {
     const navigate= useNavigate();
-    const {setUser}=useUserContext()
 
     const {register, handleSubmit} = useForm({
         defaultValues:{
@@ -23,22 +21,22 @@ const Signin = () => {
             
             <label htmlFor="phone">Phone Number</label>
             <input id="phone" 
-                className="px-3 text-sm py-2 border rounded-xl border-pink-300 outline-none dark:border-gray-600" 
+                className="px-3 dark:text-black text-sm py-2 border rounded-xl border-pink-300 outline-none dark:border-gray-600" 
                 type="text" 
                 {...register("phone")} 
-                placeholder='09XXXXXXX'/>
+                placeholder='09XXXXXXX'
+            />
             
             <label htmlFor='password'>Password</label>
             <input id="password" 
-                className="px-3 text-sm py-2 p-2 border rounded-xl border-pink-300 dark:border-gray-600 outline-none" 
+                className="px-3 dark:text-black text-sm py-2 p-2 border rounded-xl border-pink-300 dark:border-gray-600 outline-none" 
                 type="password" 
                 {...register("password")} 
-                placeholder='Enter password'/>
+                placeholder='Enter password'
+            />
 
-            <div onClick={()=>navigate("/forgotpassword")}>
-                <Text className="text-xs text-blue-800 dark:text-blue-800 cursor-pointer mt-1">Forgot password?</Text>
-            </div>
-
+            <Link onClick={()=>navigate("/forgotpassword")} className="text-xs cursor-pointer mt-1">Forgot password?</Link>
+            
             <input type="submit" className="px-3 text-sm py-2 p-2 border border-pink-300 dark:border-gray-600 outline-none rounded-xl mt-3 cursor-pointer hover:bg-light-pink dark:hover:bg-gray-700 active:bg-pink-200  active:dark:bg-gray-800" 
                 value="Sign in"/>
         </form>

@@ -27,7 +27,7 @@ const ForgotPassword = () => {
             
             <label htmlFor="phone">Phone Number</label>
             <input id="phone" 
-                className="px-3 text-sm py-2 border border-pink-300 outline-none rounded-xl dark:border-gray-600 " 
+                className="px-3 text-sm dark:text-black py-2 border border-pink-300 outline-none rounded-xl dark:border-gray-600 " 
                 type="text" 
                 {...register("phone")} 
                 placeholder='09XXXXXXX'/>
