@@ -12,6 +12,8 @@ const sideMenuList = [
     {title: "User Management", icon: faUser, id: Math.random()*100, href: "/usermanagement"},
 ]
 
+console.log("MenuList", sideMenuList);
+
 const SideBar = () => {
   return (
     <Div className="h-full p-2 border-r border-gray-200 dark:border-gray-600 cursor-pointer">
