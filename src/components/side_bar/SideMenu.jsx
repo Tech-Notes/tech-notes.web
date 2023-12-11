@@ -1,14 +1,21 @@
+/* eslint-disable react/prop-types */
 import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from "react-router";
 import { Box, Div, Text } from '../../base';
+
 
 const SideMenu = ({menu,currentPath,setCurrentPath}) => {
 
   const navigate= useNavigate();
 
   const clickMenuHandler=()=>{
-    !menu.subMenu ? navigate(menu.href): setCurrentPath(prev=> prev === menu.href ? "" :menu.href)
+    if(!menu.subMenu) { 
+      setCurrentPath(menu.href)
+      navigate(menu.href)
+    }else {
+      setCurrentPath(prev=> prev === menu.href ? "" : menu.href)
+    }
   }
 
   return (
@@ -19,10 +26,10 @@ const SideMenu = ({menu,currentPath,setCurrentPath}) => {
         {menu.subMenu && <div>{currentPath === menu.href ? <FontAwesomeIcon icon={faAngleDown} /> : <FontAwesomeIcon icon={faAngleRight} />}</div> }
       </Box>
       
-      {currentPath === menu.href && 
+      {currentPath === menu.href && !!menu.subMenu && 
         menu.subMenu.map((subMenu)=>{
           return(
-            <Box key={subMenu.key} onClick={()=>navigate(subMenu.href)} className="flex h-13 items-center p-2 gap-3 ml-4" >
+            <Box key={subMenu.id} onClick={()=>navigate(subMenu.href)} className="flex h-13 items-center p-2 gap-3 ml-4" >
               <FontAwesomeIcon icon={subMenu.icon} />
               <Text>{subMenu.title}</Text>
             </Box>
