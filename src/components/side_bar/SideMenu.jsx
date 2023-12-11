@@ -1,7 +1,7 @@
+import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {useNavigate} from "react-router";
-import {faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { Box , Div, Text} from '../../base';
+import { useNavigate } from "react-router";
+import { Box, Div, Text } from '../../base';
 
 const SideMenu = ({menu,currentPath,setCurrentPath}) => {
 
@@ -16,7 +16,7 @@ const SideMenu = ({menu,currentPath,setCurrentPath}) => {
       <Box onClick={clickMenuHandler} className="flex h-14 items-center p-3 gap-3">
         <FontAwesomeIcon icon={menu.icon} />
         <Text>{menu.title}</Text>
-        {menu.subMenu && <div>{currentPath ? <FontAwesomeIcon icon={faAngleDown} /> : <FontAwesomeIcon icon={faAngleRight} />}</div> }
+        {menu.subMenu && <div>{currentPath === menu.href ? <FontAwesomeIcon icon={faAngleDown} /> : <FontAwesomeIcon icon={faAngleRight} />}</div> }
       </Box>
       
       {currentPath === menu.href && 
