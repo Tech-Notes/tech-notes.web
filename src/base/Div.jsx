@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Div = ({children, level, className}) => {
+const Div = ({children, level, className, onClick}) => {
   return (
-    <div className= {`bg-light dark:bg-black text-black dark:text-white ${className} ${level === "2" && "bg-white dark:bg-gray-700"}`}>
+    <div onClick={onClick} className= {`bg-light dark:bg-black text-black dark:text-white ${className} ${level === "2" && "bg-white dark:bg-gray-700"}`}>
       {children}
     </div>
   );
