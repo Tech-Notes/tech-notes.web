@@ -2,6 +2,7 @@ import { faJs } from "@fortawesome/free-brands-svg-icons";
 import { faBox, faCartShopping, faDashboard, faRocket, faStar, faUser } from "@fortawesome/free-solid-svg-icons";
 import SideMenu from "./SideMenu";
 import { Div } from "../../base";
+import { useState } from "react";
 
 const sideMenuList = [
     {title: "Dashboard", icon: faDashboard, id: Math.random()*100, href: "/dashboard"},
@@ -13,10 +14,13 @@ const sideMenuList = [
 ]
 
 const SideBar = () => {
+
+  const [currentPath, setCurrentPath]=useState();
+
   return (
     <Div className="h-full p-2 border-r border-gray-200 dark:border-gray-600 cursor-pointer">
       {sideMenuList?.map((menu)=>{
-        return (<SideMenu key={menu.key} menu={menu}/>)
+        return (<SideMenu key={menu.key} menu={menu} currentPath={currentPath} setCurrentPath={setCurrentPath}/>)
       })}   
     </Div>
   );

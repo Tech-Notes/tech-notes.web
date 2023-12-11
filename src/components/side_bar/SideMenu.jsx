@@ -1,14 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
 import {useNavigate} from "react-router";
 import {faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Box , Div, Text} from '../../base';
 
-const SideMenu = ({menu}) => {
+const SideMenu = ({menu,currentPath,setCurrentPath}) => {
 
   const navigate= useNavigate();
-
-  const [currentPath, setCurrentPath]=useState();
 
   const clickMenuHandler=()=>{
     !menu.subMenu ? navigate(menu.href): setCurrentPath(prev=> prev === menu.href ? "" :menu.href)
