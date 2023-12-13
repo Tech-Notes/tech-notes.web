@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React, {createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import React, {createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useNavigate } from "react-router";
 
 const AuthContext = createContext();
 
 const AuthProvider = ({children}) => {
+    const navigate= useNavigate();
     const [token, setToken_]= useState(localStorage.getItem("token"));
 
     const [username, setUsername_]=useState(localStorage.getItem("username"));
@@ -18,6 +20,8 @@ const AuthProvider = ({children}) => {
 
     const Logout= () => {
         setUsername_("");
+        setToken_("");
+        navigate("/");
     }
 
     useEffect(()=>{

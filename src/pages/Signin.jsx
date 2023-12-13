@@ -11,6 +11,7 @@ const Signin = () => {
 
     const {handleSubmit, control} = useForm({
         defaultValues:{
+            username: "",
             phone: "",
             password: "",
         }

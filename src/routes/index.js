@@ -1,3 +1,4 @@
 import PageRoutes from "./PageRoutes";
+import ProtectedRoutes from "./ProtectedRoutes";
 
-export {PageRoutes};
+export {PageRoutes, ProtectedRoutes};
