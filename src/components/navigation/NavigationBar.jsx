@@ -2,7 +2,7 @@ import React, {useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faMoon, faSun, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { useColorScheme } from '../../utils/ColorSchemeProvider';
-import { Button, Div, Text } from '../../base';
+import { Button, Div, Text } from '../base';
 import {useNavigate} from "react-router";
 import { useUserContext } from '../../utils/UserProvider';
 
