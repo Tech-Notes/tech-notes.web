@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router';
-import { Div } from '../base';
+import { Div } from '../components/base';
 
 const AuthLayout= () => {
   return (
