@@ -1,5 +1,4 @@
-import React from 'react';
-import { Div } from '../base';
+import { Div } from "../components/base";
 
 const LoyaltySystem = () => {
   return (

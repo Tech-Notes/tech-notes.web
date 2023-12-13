@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import { Link } from "../base";
-import { LabeledInputController } from "../components";
+import { Link, LabeledInputController } from "../components/base";
 
 const Signin = () => {
     const navigate= useNavigate();
@@ -21,7 +20,7 @@ const Signin = () => {
     <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-300 h-500 gap-2 ' autoComplete='off'>  
         <LabeledInputController control={control} name="phone" label="Phone Number" placeholder="Enter phone number..."/>
                     
-        <LabeledInputController control={control} name="password" label="Password" placeholder="Enter phone number..." type="password"/>
+        <LabeledInputController control={control} name="password" label="Password" placeholder="Enter password..." type="password"/>
 
         <Link onClick={()=>navigate("/forgotpassword")} className="text-xs cursor-pointer mt-1">Forgot password?</Link>
         

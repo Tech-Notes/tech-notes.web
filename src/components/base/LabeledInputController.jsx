@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useController } from 'react-hook-form';
-import { Div } from '../base';
+import { Div } from '.';
 
 const LabeledInputController = ({control, name, defaultValue, label, ...attributes}) => {
   const {field: {value, onChange}} = useController({

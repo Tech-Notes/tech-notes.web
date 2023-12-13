@@ -1,7 +1,7 @@
 import { faJs } from "@fortawesome/free-brands-svg-icons";
 import { faBox, faCartShopping, faDashboard, faRocket, faStar, faUser } from "@fortawesome/free-solid-svg-icons";
 import SideMenu from "./SideMenu";
-import { Div } from "../../base";
+import { Div } from "../base";
 import { useState } from "react";
 
 const sideMenuList = [
