@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from "react-router";
 import { Box, Div, Text } from '../base';
 
-
 const SideMenu = ({menu,currentPath,setCurrentPath}) => {
 
   const navigate= useNavigate();
