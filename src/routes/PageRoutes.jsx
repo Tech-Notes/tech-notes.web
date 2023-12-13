@@ -1,21 +1,24 @@
 import { Route, Routes } from 'react-router';
-import { DashBoard,Customers,LoyaltySystem,PostQueue,Products,UserManagement,Signin,ForgotPassword,OTPCode } from '../pages';
-import { Layout , AuthLayout} from '../layout';
+import { AuthLayout, Layout } from '../layout';
+import { Customers, DashBoard, ForgotPassword, LoyaltySystem, OTPCode, PostQueue, Products, Signin, UserManagement } from '../pages';
 import ProtectedRoutes from './ProtectedRoutes';
 
 const PageRoutes = () => {
   return ( 
     <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route index element={<DashBoard />} />
-            <Route index path="/dashboard" element={<DashBoard />} />
-
-            <Route path="/protected" element={<ProtectedRoutes />} >
-              <Route path="/protected/inventory/products" element={< Products/>} />
-              <Route path="/protected/sales/customers" element={<Customers/>} />
-              <Route path="/protected/loyalty/system" element={<LoyaltySystem/>} />
-              <Route path="/protected/postqueue" element={<PostQueue/>} />
-              <Route path="/protected/usermanagement" element={<UserManagement/>} />
+            <Route path="/" element={<ProtectedRoutes />}>
+              {/* these two routes, should be abale to combine 
+                like this: <Route index path="/dashboard" element={<DashBoard />} />
+              */}
+              <Route index element={<DashBoard />} />
+              <Route path="/dashboard" element={<DashBoard />} />
+              {/* command end... */}
+              <Route path="/inventory/products" element={< Products/>} />
+              <Route path="/sales/customers" element={<Customers/>} />
+              <Route path="/loyalty/system" element={<LoyaltySystem/>} />
+              <Route path="/postqueue" element={<PostQueue/>} />
+              <Route path="/usermanagement" element={<UserManagement/>} />
             </Route>
 
           </Route>
