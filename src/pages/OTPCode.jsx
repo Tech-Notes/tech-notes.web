@@ -20,7 +20,7 @@ const OTPCode = () => {
     }
 
     const xClickHandler= useCallback(()=>{
-        navigate("/")
+        navigate("/forgotpassword");
     },[])
 
   return (
