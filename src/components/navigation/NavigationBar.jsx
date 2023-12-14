@@ -6,13 +6,12 @@ import { Button, Div, Text } from '../base';
 import {useNavigate} from "react-router";
 import { useAuth } from '../../provider/AuthProvider';
 
-const profile={ image: "bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww')]"}
+const profile={username: 'Thazin Naing', image: "bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww')]"}
 
 const NavigationBar = () => {
   const navigate=useNavigate();
 
-  const {username, Logout}= useAuth();
-  console.log("UserName", username);
+  const {token, Logout}= useAuth();
 
   const [showArrow, setShowArrow]= useState(false);
 
@@ -21,8 +20,6 @@ const NavigationBar = () => {
   const iconClickHandler=()=>{
     setTheme(isDark ? "light" : "dark");
   }
-
-  console.log("showArrow", showArrow)
 
   const arrowClickHandler=()=>{
     setShowArrow(prev => !prev)
@@ -42,9 +39,9 @@ const NavigationBar = () => {
           {isDark ? <FontAwesomeIcon icon={faMoon}/> : <FontAwesomeIcon icon={faSun} />}
         </Div>
 
-        {username ? <>
+        {token ? <>
             <Div className={`w-7 h-7 bg-no-repeat bg-center bg-cover bg-fit rounded-2xl ${profile.image}`}></Div>
-            <Text>{username}</Text>
+            <Text>{profile.username}</Text>
 
             <Div onClick={arrowClickHandler}>
               {!showArrow ? <>
