@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
-import { Div, Text, Link, LabeledInputController } from "../components/base";
+import { Div, Text, LabeledInputController } from "../components/base";
 import {useNavigate} from "react-router";
 import { useCallback } from "react";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const ForgotPassword = () => {
@@ -18,13 +20,13 @@ const ForgotPassword = () => {
         navigate("/otpcode");
     }
 
-    const XclickHandler= useCallback(()=>{
-        navigate("/")
+    const xClickHandler= useCallback(()=>{
+        navigate("/signin");
     },[])
 
   return (
     <Div>
-        <Link onClick={XclickHandler} className="absolute text-2xl dark:text-white text-red-600 top-0 right-0 px-4 py-1 hover:bg-red-600 hover:text-white cursor-pointer active:bg-red-700">X</Link> 
+        <FontAwesomeIcon icon={faXmark} onClick={xClickHandler} className="absolute text-xl dark:text-white text-red-600 top-0 right-0 px-4 py-2 hover:bg-red-600 hover:text-white cursor-pointer active:bg-red-700"/>
 
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-300 h-500 gap-3 ' autoComplete='off'>
 

@@ -7,15 +7,14 @@ const PageRoutes = () => {
   return ( 
     <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route index element={<DashBoard />} />
-            <Route index path="/dashboard" element={<DashBoard />} />
-
-            <Route path="/protected" element={<ProtectedRoutes />} >
-              <Route path="/protected/inventory/products" element={< Products/>} />
-              <Route path="/protected/sales/customers" element={<Customers/>} />
-              <Route path="/protected/loyalty/system" element={<LoyaltySystem/>} />
-              <Route path="/protected/postqueue" element={<PostQueue/>} />
-              <Route path="/protected/usermanagement" element={<UserManagement/>} />
+            <Route path="/" element={<ProtectedRoutes />} >
+              <Route index element={<DashBoard />} />
+              <Route index path="/dashboard" element={<DashBoard />} />
+              <Route path="/inventory/products" element={< Products/>} />
+              <Route path="/sales/customers" element={<Customers/>} />
+              <Route path="/loyalty/system" element={<LoyaltySystem/>} />
+              <Route path="/postqueue" element={<PostQueue/>} />
+              <Route path="/usermanagement" element={<UserManagement/>} />
             </Route>
 
           </Route>
@@ -24,7 +23,6 @@ const PageRoutes = () => {
             <Route path="/forgotpassword" element={<ForgotPassword/>} />
             <Route path="/otpcode" element={<OTPCode/>} />
           </Route>
-          
         </Routes>
   );
 }
