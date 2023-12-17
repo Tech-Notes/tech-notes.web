@@ -28,9 +28,9 @@ const Signin = () => {
     },[])
 
   return (
-    <Div>
+    <Div className="flex justify-center items-center w-4/6 md:w-2/6">
     
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-300 h-500 gap-2 ' autoComplete='off'>  
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-full gap-2 ' autoComplete='off'>  
 
             <LabeledInputController control={control} name="phone" label="Phone Number" placeholder="Enter phone number..."/>
                         
