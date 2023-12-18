@@ -6,6 +6,6 @@ const LoyaltySystem = () => {
       Loyalty System
     </Div>
   );
-}
+};
 
 export default LoyaltySystem;

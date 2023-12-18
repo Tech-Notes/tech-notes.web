@@ -6,6 +6,6 @@ const Customers = () => {
       Customer Page
     </Div>
   );
-}
+};
 
 export default Customers;

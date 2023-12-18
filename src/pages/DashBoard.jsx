@@ -6,6 +6,6 @@ const DashBoard = () => {
       Dashboard
     </Div>
   );
-}
+};
 
 export default DashBoard;

@@ -6,6 +6,6 @@ const PostQueue = () => {
       Post Queue
     </Div>
   );
-}
+};
 
 export default PostQueue;
