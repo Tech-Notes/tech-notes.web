@@ -1,20 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useController } from "react-hook-form";
-import { Div } from ".";
+import { useController } from 'react-hook-form';
+import { Div } from '.';
 
-const LabeledInputController = ({
-  control,
-  name,
-  defaultValue,
-  label,
-  ...attributes
-}) => {
+const LabeledInputController = ({ control, name, rules, defaultValue, label, ...attributes }) => {
   const {
-    field: { value, onChange },
+    field: { value, onChange }
   } = useController({
     control,
     name,
     defaultValue,
+    rules
   });
   return (
     <Div className="flex flex-col gap-2">
