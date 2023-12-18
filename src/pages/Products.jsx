@@ -6,6 +6,6 @@ const Products = () => {
       Products
     </Div>
   );
-}
+};
 
 export default Products;

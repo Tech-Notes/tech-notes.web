@@ -5,4 +5,4 @@ import Button from "./Button";
 import Link from "./Link";
 import LabeledInputController from "./LabeledInputController";
 
-export {Div, Box, Text, Button, Link, LabeledInputController}
+export { Div, Box, Text, Button, Link, LabeledInputController };

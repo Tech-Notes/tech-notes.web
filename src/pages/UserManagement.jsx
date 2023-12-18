@@ -6,6 +6,6 @@ const UserManagement = () => {
       User Management
     </Div>
   );
-}
+};
 
 export default UserManagement;
