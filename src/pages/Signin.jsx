@@ -38,10 +38,10 @@ const Signin = () => {
           label="Phone Number"
           placeholder="Enter phone number..."
           rules={{
-            required: 'Phone number is required.',
+            required: "Phone number is required.",
             pattern: {
               value: /^[0-9]/,
-              message: 'Incorrect password format.'
+              message: "Incorrect number format."
             }
           }}
         />

@@ -45,6 +45,13 @@ const ForgotPassword = () => {
           name="phone"
           label="Phone Number"
           placeholder="09-XXXXXXX"
+          rules={{
+            required:"This field is required",
+            pattern:{
+              value:/^[0-9]{10}/, 
+              message:"Incorrect number format."
+            }
+          }}
         />
 
         <input

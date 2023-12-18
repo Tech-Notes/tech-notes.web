@@ -43,15 +43,22 @@ const OTPCode = () => {
           control={control}
           name="otpCode"
           placeholder="XXXXXX"
+          rules={{
+            required:"This field is required.",
+            pattern:{
+              value:/^[]/,
+              message:"Incorrect code format."
+            }
+          }}
         />
 
         <input
           type="submit"
-          className="px-3 dark:text-black text-sm py-2 p-2 border border-pink-300 dark:border-gray-600 outline-none rounded-xl mt-3 cursor-pointer hover:bg-light-pink dark:hover:bg-gray-700 active:bg-pink-200  active:dark:bg-gray-800"
+          className="px-3 text-sm py-2 p-2 border border-pink-300 dark:border-gray-600 outline-none rounded-xl mt-3 cursor-pointer hover:bg-light-pink dark:hover:bg-gray-700 active:bg-pink-200  active:dark:bg-gray-800"
           value="Verify"
         />
 
-        <Text>Don&apos;t recieve OTP?</Text>
+        <Text>Don't recieve OTP?</Text>
       </form>
     </Div>
   );
