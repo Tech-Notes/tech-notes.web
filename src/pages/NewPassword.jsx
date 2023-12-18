@@ -81,7 +81,7 @@ const NewPassword = () => {
         <input
           type="submit"
           className="px-3 text-sm py-2 p-2 border border-pink-300 dark:border-gray-600 outline-none rounded-xl mt-3 cursor-pointer hover:bg-light-pink dark:hover:bg-gray-700 active:bg-pink-200  active:dark:bg-gray-800"
-          value="Change"
+          value="Save"
         />
       </form>
     </Div>
