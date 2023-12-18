@@ -7,6 +7,7 @@ import UserManagement from "./UserManagement";
 import Signin from "./Signin";
 import ForgotPassword from "./ForgotPassword";
 import OTPCode from "./OTPCode";
+import NewPassword from "./NewPassword";
 
 export {
   DashBoard,
@@ -18,4 +19,5 @@ export {
   Signin,
   ForgotPassword,
   OTPCode,
+  NewPassword
 };

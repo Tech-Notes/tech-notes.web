@@ -5,6 +5,7 @@ import {
   DashBoard,
   ForgotPassword,
   LoyaltySystem,
+  NewPassword,
   OTPCode,
   PostQueue,
   Products,
@@ -31,6 +32,7 @@ const PageRoutes = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/otpcode" element={<OTPCode />} />
+        <Route path="/newpassword" element={<NewPassword/>} />
       </Route>
     </Routes>
   );

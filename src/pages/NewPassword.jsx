@@ -1,26 +1,34 @@
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { Div, LabeledInputController, Text } from "../components/base";
 
-const OTPCode = () => {
+const NewPassword = () => {
   const navigate = useNavigate();
+
+  const [isSamePassword, setIsSamePassword] = useState("false");
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      otpCode: "",
+      password:"",
+      confirmpassword:"",
     },
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    navigate("/newpassword");
+    const {password, confirmpassword} = data;
+    if(password === confirmpassword){
+        console.log(data);
+        navigate("/signin");
+    }else{
+        setIsSamePassword(password === confirmpassword);
+    }
   };
 
   const xClickHandler = useCallback(() => {
-    navigate("/forgotpassword");
+    navigate("/otpcode");
   }, []);
 
   return (
@@ -36,33 +44,48 @@ const OTPCode = () => {
         className="flex flex-col w-300 h-500 gap-3 "
         autoComplete="off"
       >
-        <Text className="text-xl pl-5">Please enter OTP code</Text>
-
-        <Text>We have sent to 09778877887</Text>
+        <Text className="text-xl pl-5">Set New Password.</Text>
 
         <LabeledInputController
           control={control}
-          name="otpCode"
-          placeholder="XXXXXX"
+          name="password"
+          label="New Password"
+          placeholder="Enter new password."
           rules={{
             required:"This field is required.",
             pattern:{
-              value:/^[0-9]{6}/,
-              message:"Incorrect code format."
+              value:/^[a-z]{5}/, 
+              message:"Password is easy."
             }
           }}
         />
 
+        <LabeledInputController
+          control={control}
+          name="confirmpassword"
+          label="Confirm Password"
+          placeholder="Enter confirm password."
+          rules={{
+            required:"This field is required",
+            pattern:{
+              value:/^[a-z]{5}/, 
+              message:"Password is easy."
+            }
+          }}
+        />
+        
+        {
+            !isSamePassword && <Text mode="error" className="text-sm">Passwords are not same.</Text>
+        }
+
         <input
           type="submit"
           className="px-3 text-sm py-2 p-2 border border-pink-300 dark:border-gray-600 outline-none rounded-xl mt-3 cursor-pointer hover:bg-light-pink dark:hover:bg-gray-700 active:bg-pink-200  active:dark:bg-gray-800"
-          value="Verify"
+          value="Change"
         />
-
-        <Text>Don't recieve OTP?</Text>
       </form>
     </Div>
   );
 };
 
-export default OTPCode;
+export default NewPassword;
