@@ -1,8 +1,8 @@
-import { useCallback } from "react";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
-import { Div, LabeledInputController, Link } from "../components/base";
-import { useAuth } from "../provider/AuthProvider";
+import { useCallback } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+import { Div, LabeledInputController, Link } from '../components/base';
+import { useAuth } from '../provider/AuthProvider';
 
 const Signin = () => {
   const { setToken } = useAuth();
@@ -11,19 +11,19 @@ const Signin = () => {
 
   const { handleSubmit, control } = useForm({
     defaultValues: {
-      phone: "",
-      password: "",
-    },
+      phone: '',
+      password: ''
+    }
   });
 
   const onSubmit = (data) => {
     console.log(data);
-    setToken("Test Token");
-    navigate("/");
+    setToken('Test Token');
+    navigate('/');
   };
 
   const clickLinkHandler = useCallback(() => {
-    navigate("/forgotpassword");
+    navigate('/forgotpassword');
   }, []);
 
   return (
@@ -31,13 +31,19 @@ const Signin = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col w-300 h-500 gap-2 "
-        autoComplete="off"
-      >
+        autoComplete="off">
         <LabeledInputController
           control={control}
           name="phone"
           label="Phone Number"
           placeholder="Enter phone number..."
+          rules={{
+            required: 'Phone number is required.',
+            pattern: {
+              value: /^[0-9]/,
+              message: 'Incorrect password format.'
+            }
+          }}
         />
 
         <LabeledInputController
@@ -48,10 +54,7 @@ const Signin = () => {
           type="password"
         />
 
-        <Link
-          onClick={clickLinkHandler}
-          className="text-xs cursor-pointer mt-1"
-        >
+        <Link onClick={clickLinkHandler} className="text-xs cursor-pointer mt-1">
           Forgot password?
         </Link>
 
