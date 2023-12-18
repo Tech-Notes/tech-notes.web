@@ -1,8 +1,17 @@
-import React from "react";
+import React from 'react';
 
-const Text = ({ children, className }) => {
+const Text = ({ children, size, mode, className }) => {
   return (
-    <p className={` text-black dark:text-white ${className}`}>{children}</p>
+    <p
+      className={`text-${size} ${
+        mode === 'error'
+          ? 'text-red-500'
+          : mode === 'success'
+            ? 'text-green-500'
+            : ' text-black dark:text-white'
+      } ${className}`}>
+      {children}
+    </p>
   );
 };
 
