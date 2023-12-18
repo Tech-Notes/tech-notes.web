@@ -54,7 +54,7 @@ const NewPassword = () => {
           rules={{
             required:"This field is required.",
             pattern:{
-              value:/^[a-z]{5}/, 
+              value:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/, 
               message:"Password is easy."
             }
           }}
@@ -68,12 +68,12 @@ const NewPassword = () => {
           rules={{
             required:"This field is required",
             pattern:{
-              value:/^[a-z]{5}/, 
+              value:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/, 
               message:"Password is easy."
             }
           }}
         />
-        
+
         {
             !isSamePassword && <Text mode="error" className="text-sm">Passwords are not same.</Text>
         }
