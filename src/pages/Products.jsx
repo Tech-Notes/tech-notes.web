@@ -1,10 +1,22 @@
-import { Div } from "../components/base";
+import DataTable from '../data_table/DataTable';
 
 const Products = () => {
   return (
-    <Div level="2" className="p-10 w-full h-full">
-      Products
-    </Div>
+    <DataTable
+      data={[{ id: 1, name: 'mgmg' }]}
+      columns={[
+        {
+          accessorKey: 'name',
+          header: ({ table }) => <div aria-label="Name">Name</div>,
+          cell: ({ row }) => <div aria-label="Name">{row.getValue('name')}</div>
+        },
+        {
+          accessorKey: 'name',
+          header: ({ table }) => <div aria-label="Name">Name</div>,
+          cell: ({ row }) => <div aria-label="Name">{row.getValue('name') || 'mgmg'}</div>
+        }
+      ]}
+    />
   );
 };
 

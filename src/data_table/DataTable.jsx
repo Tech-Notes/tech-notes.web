@@ -1,17 +1,17 @@
+import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './Table';
-
-const { useReactTable, flexRender } = require('@tanstack/react-table');
 
 const DataTable = ({ data, columns }) => {
   const table = useReactTable({
     data,
-    columns
+    columns,
+    getCoreRowModel
   });
 
   return (
     <Table>
       <TableHeader>
-        {table.getHeaderGroups().map((headerGroup) => (
+        {table?.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>
             {headerGroup.headers.map((header) => {
               return (
