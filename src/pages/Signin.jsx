@@ -23,7 +23,7 @@ const Signin = () => {
   };
 
   const clickLinkHandler = useCallback(() => {
-    navigate('/forgotpassword');
+    navigate('/forgot_password');
   }, []);
 
   return (
@@ -40,8 +40,8 @@ const Signin = () => {
           rules={{
             required: 'Phone number is required.',
             pattern: {
-              value: /^[0-9]/,
-              message: 'Incorrect password format.'
+              value: /^[0-9]{10,}/,
+              message: 'Incorrect phone number format.'
             }
           }}
         />

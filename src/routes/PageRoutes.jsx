@@ -1,17 +1,19 @@
-import { Route, Routes } from "react-router";
-import { AuthLayout, Layout } from "../layout";
+import { Route, Routes } from 'react-router';
+import { AuthLayout, Layout } from '../layout';
 import {
   Customers,
   DashBoard,
   ForgotPassword,
+  InvalidRoutePage,
   LoyaltySystem,
+  NewPassword,
   OTPCode,
   PostQueue,
   Products,
   Signin,
-  UserManagement,
-} from "../pages";
-import ProtectedRoutes from "./ProtectedRoutes";
+  UserManagement
+} from '../pages';
+import ProtectedRoutes from './ProtectedRoutes';
 
 const PageRoutes = () => {
   return (
@@ -29,9 +31,11 @@ const PageRoutes = () => {
       </Route>
       <Route path="/" element={<AuthLayout />}>
         <Route path="/signin" element={<Signin />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/otpcode" element={<OTPCode />} />
+        <Route path="/forgot_password" element={<ForgotPassword />} />
+        <Route path="/otp_code" element={<OTPCode />} />
+        <Route path="/new_password" element={<NewPassword />} />
       </Route>
+      <Route path="/*" element={<InvalidRoutePage />} />
     </Routes>
   );
 };

@@ -1,26 +1,34 @@
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { Div, LabeledInputController, Text } from '../components/base';
 
-const ForgotPassword = () => {
+const NewPassword = () => {
   const navigate = useNavigate();
+
+  const [isSamePassword, setIsSamePassword] = useState('false');
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      phone: ''
+      password: '',
+      confirmpassword: ''
     }
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    navigate('/otp_code');
+    const { password, confirmpassword } = data;
+    if (password === confirmpassword) {
+      console.log(data);
+      navigate('/signin');
+    } else {
+      setIsSamePassword(password === confirmpassword);
+    }
   };
 
   const xClickHandler = useCallback(() => {
-    navigate('/signin');
+    navigate('/otp_code');
   }, []);
 
   return (
@@ -35,32 +43,50 @@ const ForgotPassword = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col w-300 h-500 gap-3 "
         autoComplete="off">
-        <Text className="text-xl pl-5">Forgot Your Password?</Text>
-
-        <Text>Enter your phone number to recover password</Text>
+        <Text className="text-xl pl-5">Set New Password.</Text>
 
         <LabeledInputController
           control={control}
-          name="phone"
-          label="Phone Number"
-          placeholder="09-XXXXXXX"
+          name="password"
+          label="New Password"
+          placeholder="Enter new password."
           rules={{
-            required: 'This field is required',
+            required: 'This field is required.',
             pattern: {
-              value: /^[0-9]{10,}/,
-              message: 'Incorrect phone number format.'
+              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/,
+              message: 'Please choose a strong password.'
             }
           }}
         />
 
+        <LabeledInputController
+          control={control}
+          name="confirmpassword"
+          label="Confirm Password"
+          placeholder="Enter confirm password."
+          rules={{
+            required: 'This field is required',
+            pattern: {
+              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/,
+              message: 'Please choose a strong password.'
+            }
+          }}
+        />
+
+        {!isSamePassword && (
+          <Text mode="error" className="text-sm">
+            Passwords are not same.
+          </Text>
+        )}
+
         <input
           type="submit"
           className="px-3 text-sm py-2 p-2 border border-pink-300 dark:border-gray-600 outline-none rounded-xl mt-3 cursor-pointer hover:bg-light-pink dark:hover:bg-gray-700 active:bg-pink-200  active:dark:bg-gray-800"
-          value="Continue"
+          value="Save"
         />
       </form>
     </Div>
   );
 };
 
-export default ForgotPassword;
+export default NewPassword;
