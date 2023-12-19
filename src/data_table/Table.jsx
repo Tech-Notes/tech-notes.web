@@ -3,8 +3,8 @@ import { cn } from '../utils';
 
 const Table = React.forwardRef(({ className, ...props }, ref) => {
   return (
-    <div>
-      <table ref={ref} className={className} {...props} />
+    <div className="w-full overflow-auto">
+      <table ref={ref} className={cn('w-full caption-bottom text-sm', className)} {...props} />
     </div>
   );
 });
@@ -12,11 +12,7 @@ const Table = React.forwardRef(({ className, ...props }, ref) => {
 Table.displayName = 'Table';
 
 const TableHeader = React.forwardRef(({ className, ...props }, ref) => {
-  return (
-    <div>
-      <th ref={ref} className={cn('[&_tr]:border-b', className)} {...props} />
-    </div>
-  );
+  return <thead ref={ref} className={cn('[&_tr]:border-b', className)} {...props} />;
 });
 
 TableHeader.displayName = 'Table';

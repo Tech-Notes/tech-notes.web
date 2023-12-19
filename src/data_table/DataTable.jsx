@@ -5,7 +5,7 @@ const DataTable = ({ data, columns }) => {
   const table = useReactTable({
     data,
     columns,
-    getCoreRowModel
+    getCoreRowModel: getCoreRowModel()
   });
 
   return (
@@ -26,7 +26,7 @@ const DataTable = ({ data, columns }) => {
         ))}
       </TableHeader>
       <TableBody>
-        {table.getRowModel().rows?.length ? (
+        {table.getRowModel().rows?.length > 0 ? (
           table.getRowModel().rows.map((row) => (
             <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
               {row.getVisibleCells().map((cell) => (

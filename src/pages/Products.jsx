@@ -11,9 +11,9 @@ const Products = () => {
           cell: ({ row }) => <div aria-label="Name">{row.getValue('name')}</div>
         },
         {
-          accessorKey: 'name',
-          header: ({ table }) => <div aria-label="Name">Name</div>,
-          cell: ({ row }) => <div aria-label="Name">{row.getValue('name') || 'mgmg'}</div>
+          accessorKey: 'age',
+          header: ({ table }) => <div aria-label="Age">Age</div>,
+          cell: ({ row }) => <div aria-label="Age">{row.getValue('name')}</div>
         }
       ]}
     />
