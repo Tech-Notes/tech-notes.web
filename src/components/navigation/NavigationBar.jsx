@@ -50,9 +50,9 @@ const NavigationBar = () => {
             <Text>{profile.username}</Text>
 
             <Div onClick={arrowClickHandler}>
-              {!showArrow ? (
+              {showArrow ? (
                 <>
-                  <FontAwesomeIcon icon={faAngleDown} />
+                  <FontAwesomeIcon icon={faAngleUp} />
                   <Div>
                     <Button
                       onClick={Logout}
@@ -62,7 +62,7 @@ const NavigationBar = () => {
                   </Div>
                 </>
               ) : (
-                <FontAwesomeIcon icon={faAngleUp} />
+                <FontAwesomeIcon icon={faAngleDown} />
               )}
             </Div>
           </>
