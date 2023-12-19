@@ -8,6 +8,7 @@ import Signin from './Signin';
 import ForgotPassword from './ForgotPassword';
 import OTPCode from './OTPCode';
 import NewPassword from './NewPassword';
+import InvalidRoutePage from './InvalidRoutePage';
 
 export {
   DashBoard,
@@ -19,5 +20,6 @@ export {
   Signin,
   ForgotPassword,
   OTPCode,
-  NewPassword
+  NewPassword,
+  InvalidRoutePage
 };

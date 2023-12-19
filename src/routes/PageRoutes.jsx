@@ -4,6 +4,7 @@ import {
   Customers,
   DashBoard,
   ForgotPassword,
+  InvalidRoutePage,
   LoyaltySystem,
   NewPassword,
   OTPCode,
@@ -34,6 +35,7 @@ const PageRoutes = () => {
         <Route path="/otp_code" element={<OTPCode />} />
         <Route path="/new_password" element={<NewPassword />} />
       </Route>
+      <Route path="/*" element={<InvalidRoutePage />} />
     </Routes>
   );
 };
