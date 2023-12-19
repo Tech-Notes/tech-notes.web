@@ -1,11 +1,31 @@
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import { useCallback } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './Table';
 
-const DataTable = ({ data, columns }) => {
+const DataTable = ({ data, columns, sorting = [], onSetSorting, meta, initialState }) => {
+  const onSortingChange = useCallback(
+    (updater) => {
+      let newSort;
+      if (typeof updater === 'function') {
+        newSort = updater(sorting);
+      } else {
+        newSort = updater;
+      }
+      !!onSetSorting && onSetSorting(newSort);
+    },
+    [onSetSorting, sorting]
+  );
+
   const table = useReactTable({
     data,
     columns,
-    getCoreRowModel: getCoreRowModel()
+    getCoreRowModel: getCoreRowModel(),
+    meta,
+    state: {
+      sorting
+    },
+    initialState,
+    onSortingChange
   });
 
   return (
