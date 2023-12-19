@@ -1,26 +1,26 @@
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useCallback } from "react";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
-import { Div, LabeledInputController, Text } from "../components/base";
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useCallback } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+import { Div, LabeledInputController, Text } from '../components/base';
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      phone: "",
-    },
+      phone: ''
+    }
   });
 
   const onSubmit = (data) => {
     console.log(data);
-    navigate("/otpcode");
+    navigate('/otp_code');
   };
 
   const xClickHandler = useCallback(() => {
-    navigate("/signin");
+    navigate('/signin');
   }, []);
 
   return (
@@ -34,8 +34,7 @@ const ForgotPassword = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col w-300 h-500 gap-3 "
-        autoComplete="off"
-      >
+        autoComplete="off">
         <Text className="text-xl pl-5">Forgot Your Password?</Text>
 
         <Text>Enter your phone number to recover password</Text>
@@ -46,10 +45,10 @@ const ForgotPassword = () => {
           label="Phone Number"
           placeholder="09-XXXXXXX"
           rules={{
-            required:"This field is required",
-            pattern:{
-              value:/^[0-9]{10,}/, 
-              message:"Incorrect number format."
+            required: 'This field is required',
+            pattern: {
+              value: /^[0-9]{10,}/,
+              message: 'Incorrect phone number format.'
             }
           }}
         />

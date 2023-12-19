@@ -1,34 +1,34 @@
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useCallback, useState } from "react";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
-import { Div, LabeledInputController, Text } from "../components/base";
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useCallback, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+import { Div, LabeledInputController, Text } from '../components/base';
 
 const NewPassword = () => {
   const navigate = useNavigate();
 
-  const [isSamePassword, setIsSamePassword] = useState("false");
+  const [isSamePassword, setIsSamePassword] = useState('false');
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      password:"",
-      confirmpassword:"",
-    },
+      password: '',
+      confirmpassword: ''
+    }
   });
 
   const onSubmit = (data) => {
-    const {password, confirmpassword} = data;
-    if(password === confirmpassword){
-        console.log(data);
-        navigate("/signin");
-    }else{
-        setIsSamePassword(password === confirmpassword);
+    const { password, confirmpassword } = data;
+    if (password === confirmpassword) {
+      console.log(data);
+      navigate('/signin');
+    } else {
+      setIsSamePassword(password === confirmpassword);
     }
   };
 
   const xClickHandler = useCallback(() => {
-    navigate("/otpcode");
+    navigate('/otp_code');
   }, []);
 
   return (
@@ -42,8 +42,7 @@ const NewPassword = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col w-300 h-500 gap-3 "
-        autoComplete="off"
-      >
+        autoComplete="off">
         <Text className="text-xl pl-5">Set New Password.</Text>
 
         <LabeledInputController
@@ -52,10 +51,10 @@ const NewPassword = () => {
           label="New Password"
           placeholder="Enter new password."
           rules={{
-            required:"This field is required.",
-            pattern:{
-              value:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/, 
-              message:"Password is easy."
+            required: 'This field is required.',
+            pattern: {
+              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/,
+              message: 'Password is easy.'
             }
           }}
         />
@@ -66,17 +65,19 @@ const NewPassword = () => {
           label="Confirm Password"
           placeholder="Enter confirm password."
           rules={{
-            required:"This field is required",
-            pattern:{
-              value:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/, 
-              message:"Password is easy."
+            required: 'This field is required',
+            pattern: {
+              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/,
+              message: 'Password is easy.'
             }
           }}
         />
 
-        {
-            !isSamePassword && <Text mode="error" className="text-sm">Passwords are not same.</Text>
-        }
+        {!isSamePassword && (
+          <Text mode="error" className="text-sm">
+            Passwords are not same.
+          </Text>
+        )}
 
         <input
           type="submit"

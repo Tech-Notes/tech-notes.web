@@ -1,77 +1,77 @@
-import { faJs } from "@fortawesome/free-brands-svg-icons";
+import { faJs } from '@fortawesome/free-brands-svg-icons';
 import {
   faBox,
   faCartShopping,
   faDashboard,
   faRocket,
   faStar,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { Div } from "../base";
-import SideMenu from "./SideMenu";
+  faUser
+} from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import { Div } from '../base';
+import SideMenu from './SideMenu';
 
 const sideMenuList = [
   {
-    title: "Dashboard",
+    title: 'Dashboard',
     icon: faDashboard,
     id: Math.random() * 100,
-    href: "/dashboard",
+    href: '/dashboard'
   },
   {
-    title: "Inventory",
+    title: 'Inventory',
     icon: faBox,
     id: Math.random() * 100,
-    href: "/inventory",
+    href: '/inventory',
     subMenu: [
       {
-        title: "Products",
+        title: 'Products',
         icon: faJs,
-        href: "/inventory/products",
-        id: Math.random() * 100,
-      },
-    ],
+        href: '/inventory/products',
+        id: Math.random() * 100
+      }
+    ]
   },
   {
-    title: "Sales",
+    title: 'Sales',
     icon: faCartShopping,
     id: Math.random() * 100,
-    href: "/sales",
+    href: '/sales',
     subMenu: [
       {
-        title: "Customers",
+        title: 'Customers',
         icon: faJs,
-        href: "/sales/customers",
-        id: Math.random() * 100,
-      },
-    ],
+        href: '/sales/customers',
+        id: Math.random() * 100
+      }
+    ]
   },
   {
-    title: "Loyalty System",
+    title: 'Loyalty System',
     icon: faStar,
     id: Math.random() * 100,
-    href: "/loyalty",
+    href: '/loyalty',
     subMenu: [
       {
-        title: "System",
+        title: 'System',
         icon: faJs,
-        href: "/loyalty/system",
-        id: Math.random() * 100,
-      },
-    ],
+        href: '/loyalty/system',
+        id: Math.random() * 100
+      }
+    ]
   },
   {
-    title: "Post Queue",
+    title: 'Post Queue',
     icon: faRocket,
     id: Math.random() * 100,
-    href: "/postqueue",
+    href: '/postqueue'
   },
   {
-    title: "User Management",
+    title: 'User Management',
     icon: faUser,
     id: Math.random() * 100,
-    href: "/usermanagement",
-  },
+    href: '/usermanagement'
+  }
 ];
 
 const SideBar = () => {

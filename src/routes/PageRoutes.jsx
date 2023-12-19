@@ -1,5 +1,5 @@
-import { Route, Routes } from "react-router";
-import { AuthLayout, Layout } from "../layout";
+import { Route, Routes } from 'react-router';
+import { AuthLayout, Layout } from '../layout';
 import {
   Customers,
   DashBoard,
@@ -10,9 +10,9 @@ import {
   PostQueue,
   Products,
   Signin,
-  UserManagement,
-} from "../pages";
-import ProtectedRoutes from "./ProtectedRoutes";
+  UserManagement
+} from '../pages';
+import ProtectedRoutes from './ProtectedRoutes';
 
 const PageRoutes = () => {
   return (
@@ -30,9 +30,9 @@ const PageRoutes = () => {
       </Route>
       <Route path="/" element={<AuthLayout />}>
         <Route path="/signin" element={<Signin />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/otpcode" element={<OTPCode />} />
-        <Route path="/newpassword" element={<NewPassword/>} />
+        <Route path="/forgot_password" element={<ForgotPassword />} />
+        <Route path="/otp_code" element={<OTPCode />} />
+        <Route path="/new_password" element={<NewPassword />} />
       </Route>
     </Routes>
   );

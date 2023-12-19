@@ -1,4 +1,4 @@
-import { Div } from "../components/base";
+import { Div } from '../components/base';
 
 const PostQueue = () => {
   return (
