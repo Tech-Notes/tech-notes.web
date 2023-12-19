@@ -54,7 +54,7 @@ const NewPassword = () => {
             required: 'This field is required.',
             pattern: {
               value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/,
-              message: 'Password is easy.'
+              message: 'Please choose a strong password.'
             }
           }}
         />
@@ -68,7 +68,7 @@ const NewPassword = () => {
             required: 'This field is required',
             pattern: {
               value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])(?=.{8,})/,
-              message: 'Password is easy.'
+              message: 'Please choose a strong password.'
             }
           }}
         />
