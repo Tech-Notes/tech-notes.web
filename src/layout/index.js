@@ -1,4 +1,4 @@
-import Layout from "./Layout";
-import AuthLayout from "./AuthLayout";
+import Layout from './Layout';
+import AuthLayout from './AuthLayout';
 
 export { Layout, AuthLayout };

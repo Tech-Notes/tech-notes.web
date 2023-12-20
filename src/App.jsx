@@ -1,6 +1,6 @@
-import React from "react";
-import { AuthProvider, ColorSchemeProvider } from "./provider";
-import { PageRoutes } from "./routes";
+import React from 'react';
+import { AuthProvider, ColorSchemeProvider } from './provider';
+import { PageRoutes } from './routes';
 
 const App = () => {
   return (
