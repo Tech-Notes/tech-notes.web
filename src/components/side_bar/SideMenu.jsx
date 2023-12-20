@@ -19,7 +19,11 @@ const SideMenu = ({ menu, currentPath, setCurrentPath }) => {
 
   return (
     <Div>
-      <Box onClick={clickMenuHandler} className="flex h-14 items-center p-3 gap-3">
+      <Box
+        onClick={clickMenuHandler}
+        className={`flex h-14 items-center p-3 gap-3 ${
+          menu.href === location.pathname && 'dark:bg-gray-900 bg-pink-100'
+        }`}>
         <FontAwesomeIcon icon={menu.icon} />
         <Text>{menu.title}</Text>
         {menu.subMenu && (
