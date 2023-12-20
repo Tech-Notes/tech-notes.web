@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Div = ({ children, level, className, onClick }) => {
   return (
     <div
