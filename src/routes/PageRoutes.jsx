@@ -3,6 +3,7 @@ import { AuthLayout, Layout } from '../layout';
 import {
   Customers,
   DashBoard,
+  DialogBox,
   ForgotPassword,
   InvalidRoutePage,
   LoyaltySystem,
@@ -35,6 +36,7 @@ const PageRoutes = () => {
         <Route path="/otp_code" element={<OTPCode />} />
         <Route path="/new_password" element={<NewPassword />} />
       </Route>
+      <Route path="/dialog_box" element={<DialogBox />} />
       <Route path="/*" element={<InvalidRoutePage />} />
     </Routes>
   );
