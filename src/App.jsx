@@ -1,12 +1,14 @@
 import React from 'react';
-import { AuthProvider, ColorSchemeProvider } from './provider';
+import { AuthProvider, ColorSchemeProvider, DialogProvider } from './provider';
 import { PageRoutes } from './routes';
 
 const App = () => {
   return (
     <ColorSchemeProvider>
       <AuthProvider>
-        <PageRoutes />
+        <DialogProvider>
+          <PageRoutes />
+        </DialogProvider>
       </AuthProvider>
     </ColorSchemeProvider>
   );
