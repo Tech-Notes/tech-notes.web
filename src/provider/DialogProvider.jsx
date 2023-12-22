@@ -1,4 +1,5 @@
-import { useContext, createContext, useState } from 'react';
+import { useContext, createContext, useState, useCallback } from 'react';
+import Dialog from '@material-ui/core';
 
 const dialogContext = createContext();
 
@@ -9,19 +10,21 @@ export const useDialog = () => {
 };
 
 const DialogProvider = ({ children }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
-  const handleClickToOpen = () => {
+  const handleClickToOpen = useCallback(() => {
     setOpen(true);
-  };
+  }, []);
 
-  const handleToClose = () => {
+  const handleToClose = useCallback(() => {
     setOpen(false);
-  };
+  }, []);
 
   return (
     <dialogContext.Provider value={{ open, handleToClose, handleClickToOpen }}>
-      {children}
+      <Dialog open={open} onClose={handleToClose}>
+        {children}
+      </Dialog>
     </dialogContext.Provider>
   );
 };

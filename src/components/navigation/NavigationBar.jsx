@@ -1,6 +1,6 @@
 import { faAngleDown, faAngleUp, faHouse, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuth } from '../../provider/AuthProvider';
 import { useColorScheme } from '../../provider/ColorSchemeProvider';
@@ -21,17 +21,21 @@ const NavigationBar = () => {
 
   const { isDark, setTheme } = useColorScheme();
 
-  const iconClickHandler = () => {
+  const iconClickHandler = useCallback(() => {
     setTheme(isDark ? 'light' : 'dark');
-  };
+  }, []);
 
-  const arrowClickHandler = () => {
+  const arrowClickHandler = useCallback(() => {
     setShowArrow((prev) => !prev);
-  };
+  }, []);
 
-  const onClickHandler = () => {
+  const onClickHandler = useCallback(() => {
     navigate('/');
-  };
+  }, []);
+
+  const onClickSignin = useCallback(() => {
+    navigate('/signin');
+  }, []);
 
   return (
     <Div className="flex items-center justify-between pr-4 border-b border-gray-200 dark:border-gray-600 h-16 cursor-pointer relative">
@@ -67,7 +71,7 @@ const NavigationBar = () => {
             </Div>
           </>
         ) : (
-          <Button onClick={() => navigate('/signin')} className="px-3 py-2">
+          <Button onClick={onClickSignin} className="px-3 py-2">
             Sign in
           </Button>
         )}
