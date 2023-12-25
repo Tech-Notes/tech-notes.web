@@ -1,29 +1,27 @@
-import axios from 'axios';
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import Cookies from 'js-cookie';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [token, setToken_] = useState(localStorage.getItem('token'));
+  const [token, setToken_] = useState(Cookies.get('token'));
 
   const setToken = (newToken) => {
     setToken_(newToken);
   };
 
-  const Logout = () => {
+  const Logout = useCallback(() => {
     setToken_('');
-    navigate('/');
-  };
+    navigate('/signin');
+  }, [navigate]);
 
   useEffect(() => {
     if (token) {
-      axios.defaults.headers.common.Authorization = 'Bearer' + token;
-      localStorage.setItem('token', token);
+      Cookies.set('token', token, { secure: true, expires: 7 });
     } else {
-      delete axios.defaults.headers.common.Authorization;
-      localStorage.removeItem('token');
+      Cookies.remove('token');
     }
   }, [token]);
 
@@ -33,7 +31,7 @@ const AuthProvider = ({ children }) => {
       setToken,
       Logout
     }),
-    [token]
+    [Logout, token]
   );
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;

@@ -16,15 +16,30 @@ const Signin = () => {
     }
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setToken('Test Token');
-    navigate('/');
-  };
+  const onSubmit = useCallback(
+    async (formData) => {
+      const form = {
+        phone_number: formData.phone,
+        password: formData.password
+      };
+      const resp = await fetch(`${process.env.API_BASE}/sign-in`, {
+        method: 'POST',
+        body: JSON.stringify(form)
+      });
+      const data = await resp.json();
+
+      console.log('data', data);
+      if (data.status === 'success') {
+        setToken(data.data.token);
+        navigate('/');
+      }
+    },
+    [navigate, setToken]
+  );
 
   const clickLinkHandler = useCallback(() => {
     navigate('/forgot_password');
-  }, []);
+  }, [navigate]);
 
   return (
     <Div>
