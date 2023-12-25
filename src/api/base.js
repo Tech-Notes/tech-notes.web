@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 const DEFAULT_HEADERS = {
   Accept: 'application/json',
   'Content-Type': 'application/json'
@@ -13,7 +15,7 @@ export function toQueryString(params) {
 }
 
 export const getHeaders = async () => {
-  const token = localStorage.getItem('token');
+  const token = Cookies.get('token');
   const headers = token
     ? {
         ...DEFAULT_HEADERS,
