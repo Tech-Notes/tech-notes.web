@@ -21,7 +21,7 @@ const ForgotPassword = () => {
 
   const xClickHandler = useCallback(() => {
     navigate('/signin');
-  }, []);
+  }, [navigate]);
 
   return (
     <Div>

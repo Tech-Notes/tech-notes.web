@@ -13,9 +13,12 @@ export const useColorScheme = () => {
 const ColorSchemeProvider = ({ children }) => {
   const [scheme, setScheme] = useState(localStorage.getItem('theme'));
 
-  const setTheme = useCallback((theme) => {
-    setScheme(theme);
-  }, []);
+  const setTheme = useCallback(
+    (theme) => {
+      setScheme(theme);
+    },
+    [setScheme]
+  );
 
   useEffect(() => {
     if (
