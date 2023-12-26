@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { Div, LabeledInputController, Link } from '../components/base';
 import { useAuth } from '../provider/AuthProvider';
+import { notify } from '../components/alerts';
 
 const Signin = () => {
   const { setToken } = useAuth();
@@ -22,6 +23,7 @@ const Signin = () => {
         phone_number: formData.phone,
         password: formData.password
       };
+
       const resp = await fetch(`${process.env.API_BASE}/sign-in`, {
         method: 'POST',
         body: JSON.stringify(form)

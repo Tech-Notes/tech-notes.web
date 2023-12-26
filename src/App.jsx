@@ -1,14 +1,14 @@
 import React from 'react';
-import { AuthProvider, ColorSchemeProvider, DialogProvider } from './provider';
+import { AuthProvider, ColorSchemeProvider } from './provider';
 import { PageRoutes } from './routes';
+import { ToastAlert } from './components/alerts';
 
 const App = () => {
   return (
     <ColorSchemeProvider>
       <AuthProvider>
-        <DialogProvider>
-          <PageRoutes />
-        </DialogProvider>
+        <PageRoutes />
+        <ToastAlert />
       </AuthProvider>
     </ColorSchemeProvider>
   );
