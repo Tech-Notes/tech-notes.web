@@ -24,8 +24,6 @@ const Signin = () => {
         password: formData.password
       };
 
-      notify('example alert for success', 'success');
-
       const resp = await fetch(`${process.env.API_BASE}/sign-in`, {
         method: 'POST',
         body: JSON.stringify(form)
@@ -39,6 +37,7 @@ const Signin = () => {
         navigate('/');
       } else {
         console.error(data.error.message);
+        notify(data.error.message, 'error');
       }
     },
     [navigate, setToken]
