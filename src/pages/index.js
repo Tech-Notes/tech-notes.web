@@ -9,7 +9,6 @@ import ForgotPassword from './ForgotPassword';
 import OTPCode from './OTPCode';
 import NewPassword from './NewPassword';
 import InvalidRoutePage from './InvalidRoutePage';
-import DialogBox from './DialogBox';
 
 export {
   DashBoard,
@@ -23,5 +22,4 @@ export {
   OTPCode,
   NewPassword,
   InvalidRoutePage,
-  DialogBox
-};
+}

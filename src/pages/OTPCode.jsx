@@ -21,7 +21,7 @@ const OTPCode = () => {
 
   const xClickHandler = useCallback(() => {
     navigate('/forgot_password');
-  }, []);
+  }, [navigate]);
 
   return (
     <Div>

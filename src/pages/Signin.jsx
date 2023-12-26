@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { Div, LabeledInputController, Link } from '../components/base';
 import { useAuth } from '../provider/AuthProvider';
+import { notify, ToastAlert } from '../components/alerts';
 
 const Signin = () => {
   const { setToken } = useAuth();
@@ -22,6 +23,9 @@ const Signin = () => {
         phone_number: formData.phone,
         password: formData.password
       };
+
+      notify('example alert for success', 'success');
+
       const resp = await fetch(`${process.env.API_BASE}/sign-in`, {
         method: 'POST',
         body: JSON.stringify(form)
@@ -29,9 +33,12 @@ const Signin = () => {
       const data = await resp.json();
 
       console.log('data', data);
+
       if (data.status === 'success') {
         setToken(data.data.token);
         navigate('/');
+      } else {
+        console.error(data.error.message);
       }
     },
     [navigate, setToken]
@@ -79,6 +86,7 @@ const Signin = () => {
           value="Sign in"
         />
       </form>
+      <ToastAlert />
     </Div>
   );
 };
