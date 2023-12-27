@@ -1,6 +1,9 @@
 import { Div, Box } from '../base';
+import { useDialog } from '../../provider/DialogProvider';
 
-const Modal = ({ showModal, closeModal, deleteItem, children }) => {
+const Modal = ({ onConfirm, children }) => {
+  const { showModal, closeModal } = useDialog();
+
   return (
     <Div
       className={`${
@@ -8,7 +11,7 @@ const Modal = ({ showModal, closeModal, deleteItem, children }) => {
       }`}>
       <Div>{children}</Div>
       <Div className="flex justify-between">
-        <Box className="cursor-pointer px-3 py-1" type="button" onClick={deleteItem}>
+        <Box className="cursor-pointer px-3 py-1" type="button" onClick={onConfirm}>
           Ok
         </Box>
         <Box className="cursor-pointer px-3 py-1" type="button" onClick={closeModal}>

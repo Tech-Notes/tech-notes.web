@@ -1,4 +1,4 @@
-import { useState, useContext, createContext, useMemo, useCallback } from 'react';
+import { useState, useContext, createContext, useCallback } from 'react';
 
 const dialogContext = createContext();
 
@@ -10,7 +10,6 @@ export const useDialog = () => {
 
 const DialogProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
-  const [isDelete, setIsDelete_] = useState(false);
 
   const openModal = useCallback(() => {
     setShowModal(true);
@@ -20,15 +19,7 @@ const DialogProvider = ({ children }) => {
     setShowModal(false);
   }, [setShowModal]);
 
-  const deleteItem = useCallback(() => {
-    setShowModal(false);
-    setIsDelete_(true);
-  }, [setShowModal, setIsDelete_]);
-
-  const contextValue = useMemo(
-    () => ({ showModal, closeModal, openModal, isDelete, deleteItem }),
-    [showModal, openModal, closeModal, isDelete, deleteItem]
-  );
+  const contextValue = { showModal, closeModal, openModal };
 
   return <dialogContext.Provider value={contextValue}>{children}</dialogContext.Provider>;
 };

@@ -1,3 +1,3 @@
-import DialogModal from './DialogModal';
+import Modal from './DialogModal';
 
-export { DialogModal };
+export { Modal };
