@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthProvider, ColorSchemeProvider } from './provider';
+import { AuthProvider, ColorSchemeProvider, DialogProvider } from './provider';
 import { PageRoutes } from './routes';
 import { ToastAlert } from './components/alerts';
 
@@ -7,8 +7,10 @@ const App = () => {
   return (
     <ColorSchemeProvider>
       <AuthProvider>
-        <PageRoutes />
-        <ToastAlert />
+        <DialogProvider>
+          <PageRoutes />
+          <ToastAlert />
+        </DialogProvider>
       </AuthProvider>
     </ColorSchemeProvider>
   );
