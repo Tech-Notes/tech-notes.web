@@ -1,16 +1,6 @@
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const notify = (alertMessage, result) => {
-  if (result === 'success') {
-    toast.success(alertMessage);
-  } else if (result === 'error') {
-    toast.error(alertMessage);
-  } else {
-    toast(alertMessage);
-  }
-};
-
 const ToastAlert = () => {
   return (
     <ToastContainer

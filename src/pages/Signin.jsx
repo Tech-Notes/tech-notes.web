@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { Div, LabeledInputController, Link } from '../components/base';
 import { useAuth } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Signin = () => {
   const { setToken } = useAuth();
@@ -30,9 +31,13 @@ const Signin = () => {
       const data = await resp.json();
 
       console.log('data', data);
+
       if (data.status === 'success') {
         setToken(data.data.token);
         navigate('/');
+      } else {
+        console.log(data.error.message);
+        toast.error(data.error.message);
       }
     },
     [navigate, setToken]
