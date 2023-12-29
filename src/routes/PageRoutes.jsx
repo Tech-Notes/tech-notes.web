@@ -12,7 +12,6 @@ import {
   Products,
   Signin,
   UserManagement,
-  LoadingPage
 } from '../pages';
 // import ProtectedRoutes from './ProtectedRoutes';
 
@@ -21,8 +20,7 @@ const PageRoutes = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* <Route path="/" element={<ProtectedRoutes />}> */}
-        {/* <Route index element={<DashBoard />} /> */}
-        <Route index element={<LoadingPage />} />
+        <Route index element={<DashBoard />} />
         <Route index path="/dashboard" element={<DashBoard />} />
         <Route path="/inventory/products" element={<Products />} />
         <Route path="/sales/customers" element={<Customers />} />

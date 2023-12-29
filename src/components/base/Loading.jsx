@@ -1,6 +1,6 @@
-import { Div } from '../components/base';
+import Div from './Div';
 
-const LoadingPage = () => {
+const Loading = () => {
   return (
     <Div level="2" className="flex justify-center pt-20 w-full h-full">
       <Div
@@ -10,4 +10,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default Loading;
