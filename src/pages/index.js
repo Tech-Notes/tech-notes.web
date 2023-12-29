@@ -9,6 +9,7 @@ import ForgotPassword from './ForgotPassword';
 import OTPCode from './OTPCode';
 import NewPassword from './NewPassword';
 import InvalidRoutePage from './InvalidRoutePage';
+import LoadingPage from './LoadingPage';
 
 export {
   DashBoard,
@@ -22,4 +23,5 @@ export {
   OTPCode,
   NewPassword,
   InvalidRoutePage,
-}
+  LoadingPage
+};

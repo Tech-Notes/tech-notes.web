@@ -11,23 +11,25 @@ import {
   PostQueue,
   Products,
   Signin,
-  UserManagement
+  UserManagement,
+  LoadingPage
 } from '../pages';
-import ProtectedRoutes from './ProtectedRoutes';
+// import ProtectedRoutes from './ProtectedRoutes';
 
 const PageRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/" element={<ProtectedRoutes />}>
-          <Route index element={<DashBoard />} />
-          <Route index path="/dashboard" element={<DashBoard />} />
-          <Route path="/inventory/products" element={<Products />} />
-          <Route path="/sales/customers" element={<Customers />} />
-          <Route path="/loyalty/system" element={<LoyaltySystem />} />
-          <Route path="/postqueue" element={<PostQueue />} />
-          <Route path="/usermanagement" element={<UserManagement />} />
-        </Route>
+        {/* <Route path="/" element={<ProtectedRoutes />}> */}
+        {/* <Route index element={<DashBoard />} /> */}
+        <Route index element={<LoadingPage />} />
+        <Route index path="/dashboard" element={<DashBoard />} />
+        <Route path="/inventory/products" element={<Products />} />
+        <Route path="/sales/customers" element={<Customers />} />
+        <Route path="/loyalty/system" element={<LoyaltySystem />} />
+        <Route path="/postqueue" element={<PostQueue />} />
+        <Route path="/usermanagement" element={<UserManagement />} />
+        {/* </Route> */}
       </Route>
       <Route path="/" element={<AuthLayout />}>
         <Route path="/signin" element={<Signin />} />
