@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Loading, { Div } from '../components/base';
+import { Loading, Div } from '../components/base';
 
 const Customers = () => {
   return (
