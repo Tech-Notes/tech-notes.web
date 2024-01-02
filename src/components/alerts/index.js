@@ -1,3 +1,3 @@
-import ToastAlert, { notify } from './ToastAlert';
+import ToastAlert from './ToastAlert';
 
-export { ToastAlert, notify };
+export { ToastAlert };

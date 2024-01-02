@@ -22,4 +22,4 @@ export {
   OTPCode,
   NewPassword,
   InvalidRoutePage,
-}
+};

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router';
-import { Div } from '../components/base';
+import { Div, Loading } from '../components/base';
 import { NavigationBar } from '../components/navigation';
 import { SideBar } from '../components/side_bar';
 

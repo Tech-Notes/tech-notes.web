@@ -1,7 +1,8 @@
 import { orderBy } from 'lodash';
-import { useCallback, useEffect, useState } from 'react';
+import { Suspense, useCallback, useEffect, useState } from 'react';
 import DataTable from '../data_table/DataTable';
 import SortableColumnHeader from '../data_table/SortableColumnHeader';
+import { Loading } from '../components/base';
 
 const data = [
   { id: 1, name: 'mg mg', age: 12 },
@@ -25,25 +26,27 @@ const Products = () => {
   }, [desc, setOrderedData]);
 
   return (
-    <DataTable
-      data={orderedData}
-      sorting={[{ desc, id: sortBy }]}
-      onSetSorting={onSortingChangeX}
-      columns={[
-        { id: 'select' },
-        {
-          accessorKey: 'name',
-          header: () => <div aria-label="Name">Name</div>,
-          cell: ({ row }) => <div aria-label="Name">{row.getValue('name')}</div>
-        },
-        {
-          accessorKey: 'age',
-          header: ({ column }) => <SortableColumnHeader column={column} title="Age" />,
-          cell: ({ row }) => <div aria-label="Age">{row.getValue('age')}</div>,
-          enableSorting: true
-        }
-      ]}
-    />
+    <Suspense fallback={<Loading />}>
+      <DataTable
+        data={orderedData}
+        sorting={[{ desc, id: sortBy }]}
+        onSetSorting={onSortingChangeX}
+        columns={[
+          { id: 'select' },
+          {
+            accessorKey: 'name',
+            header: () => <div aria-label="Name">Name</div>,
+            cell: ({ row }) => <div aria-label="Name">{row.getValue('name')}</div>
+          },
+          {
+            accessorKey: 'age',
+            header: ({ column }) => <SortableColumnHeader column={column} title="Age" />,
+            cell: ({ row }) => <div aria-label="Age">{row.getValue('age')}</div>,
+            enableSorting: true
+          }
+        ]}
+      />
+    </Suspense>
   );
 };
 
