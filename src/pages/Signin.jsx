@@ -30,8 +30,6 @@ const Signin = () => {
       });
       const data = await resp.json();
 
-      console.log('data', data);
-
       if (data.status === 'success') {
         setToken(data.data.token);
         navigate('/');
